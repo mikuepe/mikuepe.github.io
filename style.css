@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: aqua;
+}
+
+p {
+    background-color: bisque;
+}
+
+body > div {
+    margin: auto;
+    padding: 5px;
+    width: fit-content;
+    height: fit-content;
+}
+
+.input-area label {
+    display: inline-block;
+    width: 75px;
+}
+
+.output-area textarea {
+    resize: none;
+}

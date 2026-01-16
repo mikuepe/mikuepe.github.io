@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"></link>
+    <title>Message Maker</title>
+</head>
+<body>
+    <div class="input-area">
+        <label for="label">Label</label>
+        <input id="label"><br>
+        <label for="label-link">Link</label>
+        <input id="label-link"><br>
+        <label for="local-time">Date/Time</label>
+        <input id="local-time" type="datetime-local"><br>
+        <label for="date-enabled">Show Date</label>
+        <input id="date-enabled" type="checkbox"><br>
+        <label for="time-enabled">Show Time</label>
+        <input id="time-enabled" type="checkbox"><br>
+        <button onclick="generateText()">Generate!</button>
+    </div>
+    <div class="output-area">
+        <textarea id="output" type="text" rows="4" cols="50" readonly></textarea>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
