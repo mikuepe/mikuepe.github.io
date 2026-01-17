@@ -26,3 +26,12 @@ body > div {
 .output-area textarea {
     resize: none;
 }
+
+button {
+    padding: 2px;
+}
+
+img {
+    margin: -5px;
+    margin-left: 0;
+}

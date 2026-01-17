@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"></link>
+    <title>Message Maker</title>
+</head>
+<body>
+    <div class="input-area">
+        <form id="input-form">
+        <span title="Text label used for hyperlink" >
+            <label for="label">Label</label>
+            <input id="label" placeholder="Hyperlink Title" oninput="generateText()" required><br>
+        </span>
+        <span title="Full url inclduing http:// or https://">
+            <label for="label-link">Link</label>
+            <input id="label-link" placeholder="https://www.google.com" oninput="generateText()" required><br>
+        </span>
+        <span title="Optional pretext displayed before the label">
+            <label for="prefix">Pretext</label>
+            <input id="prefix" placeholder="Hyperlink Info (Pretext)" oninput="generateText()"><br>
+        </span>
+        <span title="Optional posttext displayed after the label">
+            <label for="postfix">Posttext</label>
+            <input id="postfix" placeholder="Hyperlink Info (Posttext)" oninput="generateText()"><br>
+        </span>
+        <span title="Local time this thing is happening">
+            <label for="local-time">Date/Time</label>
+            <input id="local-time" type="datetime-local" oninput="generateText()" required><br>
+        </span>
+        <span title="Should the date be displayed after the hyperlink?">
+            <label for="date-enabled">Show Date</label>
+            <input id="date-enabled" type="checkbox" onchange="generateText()" checked><br>
+        </span>
+        <span title="Should the relative time until the date be dislpayed after the hyperlink?">
+            <label for="time-enabled">Show Time</label>
+            <input id="time-enabled" type="checkbox" onchange="generateText()" checked><br>
+        </span>
+        <!-- <button type="submit" title="GENERATE MY TEXT!!!">Generate!</button> -->
+        </form>
+    </div>
+    <div class="output-area">
+        <button title="Clear all input fields above" onclick="clearInput()">
+            <img src="Assets/delete_forever_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" height="20">
+            Clear input
+        </button>
+        <button title="Copy the message to your clipboard" onclick="copyToClipboard()">
+            <img src="Assets/copy_all_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" height="20">
+            Copy Message
+        </button><br>
+        <textarea id="output" type="text" rows="4" cols="50" placeholder="The generated text will appear here! (readonly)" readonly></textarea>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
