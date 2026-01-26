@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.disabled > *:not(legend) {
+    opacity: 0.5;
+}
+
+.container {
+    width: 100%;
+    display: inline-grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+body {
+    padding: 5px;
+    margin: 5px;
+}
+
+fieldset {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+fieldset > fieldset {
+    border-style: none;
+    margin: -5px;
+}
+
+legend {
+    padding-inline: 5px;
+    border-style: inherit;
+    border-width: 2px;
+    opacity: 2;
+    background-color: #f0f0f0;
+}
+
+legend > label {
+    user-select: none;
+}

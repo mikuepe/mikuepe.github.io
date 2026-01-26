@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dmfapp.css">
+
+    <!-- Template for every instance of an input object -->
+    <template id="template-main-input-fieldset">
+        <fieldset>
+            <legend>
+                <label><input type="checkbox" onchange="ToggleFieldset(this)" checked> Enabled</label>
+                <button onclick="RemoveFieldset(this)">Remove</button>
+            </legend>
+            <label>Input Type <select class='input-type-selection' onchange="UpdateFieldsetInputType(this, value)">
+            </select></label>
+            <label>Identifier</label>
+            <input type="text" class="identifier" placeholder="text-input-1">
+            <br><br>
+            <div class="input-properties"></div>
+            <fieldset class="input-area"></fieldset>
+        </fieldset>
+    </template>
+
+    <!-- Templates for the properties portions of an input object -->
+    <template id="template-properties-text-area"></template>
+    <template id="template-properties-number-area"></template>
+    <template id="template-properties-range-area">
+        <label></label>
+    </template>
+    <template id="template-properties-datetime-area"></template>
+    <template id="template-properties-email-area"></template>
+    <template id="template-properties-telephone-area"></template>
+    <template id="template-properties-url-area"></template>
+
+    <!-- Templates for the input portions of an input object -->
+    <template id="template-input-text-area">
+        <label>Text Value <input type="text" class="value" placeholder="Input raw text here!"></label>
+    </template>
+    <template id="template-input-number-area">
+        <label>Number Value <input type="number" class="value" placeholder="Input number here!"></label>
+    </template>
+    <template id="template-input-range-area">
+        <label>Min <input type="number" onchange="this.closest('fieldset').querySelector('.value').min = value" value="0"></label>
+        <label>Max <input type="number" onchange="this.closest('fieldset').querySelector('.value').max = value" value="10"></label>
+        <label>Step <input type="number" onchange="this.closest('fieldset').querySelector('.value').min = value" value="1"></label>
+        <label>Value <input type="range" class="value" value="0" step="1" min="0" max="10"></label>
+    </template>
+    <template id="template-input-datetime-area">
+        <label>Date/Time Value <input type="datetime-local" class="value" placeholder="Input number here!"></label>
+    </template>
+    <template id="template-input-email-area">
+        <label>Email Value <input type="email" class="value" placeholder="name@email.com"></label>
+    </template>
+    <template id="template-input-telephone-area">
+        <label>Telephone Number Value <input type="tel" class="value" placeholder="123-456-7890"></label>
+    </template>
+    <template id="template-input-url-area">
+        <label>URL Value <input type="url" class="value" placeholder="www.google.com"></label>
+    </template>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <button onclick="AddInputField()">Add Value Input</button>
+            <button onclick="RemoveAllFields()">Clear All</button>
+            <br><br>
+
+            <div id="input-field-container">
+            </div>
+        </div>
+        <div>
+        </div>
+    </div>
+
+    <script src="dmfapp.js"></script>
+</body>
+</html>
